@@ -7,9 +7,7 @@ Installs micromamba, the fast cross-platform package manager.
 
 ```json
 "features": {
-    "ghcr.io/eitsupi/mamba-devcontainer-features/micromamba:0": {
-        "version": "latest"
-    }
+    "ghcr.io/maresb/mamba-devcontainer-features/micromamba:0": {}
 }
 ```
 
@@ -17,10 +15,12 @@ Installs micromamba, the fast cross-platform package manager.
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | Select version of micromamba. | string | latest |
+| version | Exact version of Micromamba to install (must be X.Y.Z) | string | latest |
+| reinstall | Reinstall in case Micromamba already exists | boolean | false |
+| addCondaForge | Add conda-forge channel to the config? | boolean | false |
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/eitsupi/mamba-devcontainer-features/blob/main/src/micromamba/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/maresb/mamba-devcontainer-features/blob/main/src/micromamba/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
