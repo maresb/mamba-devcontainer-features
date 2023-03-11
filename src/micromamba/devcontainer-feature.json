@@ -48,5 +48,6 @@
     },
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils"
-    ]
+    ],
+    "entrypoint": "/usr/local/share/micromamba-entrypoint.sh"
 }

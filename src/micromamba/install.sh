@@ -145,9 +145,39 @@ EOF
     fi
 }
 
+create_entrypoint() {
+    if [ ! -e "/usr/local/share/nix-entrypoint.sh" ]; then
+        cat << 'EOF' > /usr/local/share/micromamba-entrypoint.sh
+#!/usr/bin/env bash
+
+LOG=/tmp/container-init.log
+
+# Log messages
+log()
+{
+    echo -e "[$(date)] $@" | tee -a $LOG > /dev/null
+}
+
+
+touch /tmp/asdf
+echo "hi"
+export NMNM=123
+eval "$(micromamba shell hook --shell=bash)"
+
+log "Executing \"$@\"."
+exec "$@"
+log "** SCRIPT EXIT **"
+EOF
+        chmod +x /usr/local/share/micromamba-entrypoint.sh
+    fi
+}
+
 export DEBIAN_FRONTEND=noninteractive
 
 ensure_path_for_login_shells
+
+whoami
+create_entrypoint
 
 if [ "${ALLOW_REINSTALL}" = "false" ]; then
     if type micromamba > /dev/null 2>&1; then
