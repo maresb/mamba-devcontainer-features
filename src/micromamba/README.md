@@ -7,7 +7,7 @@ Installs micromamba, the fast cross-platform package manager.
 
 ```json
 "features": {
-    "ghcr.io/mamba-org/devcontainer-features/micromamba:1": {}
+    "ghcr.io/maresb/mamba-devcontainer-features/micromamba:1": {}
 }
 ```
 
@@ -18,6 +18,9 @@ Installs micromamba, the fast cross-platform package manager.
 | version | Exact version of Micromamba to install, if not latest (must be X.Y.Z) | string | latest |
 | allowReinstall | Reinstall in case Micromamba already exists | boolean | false |
 | channels | Comma separated list of Conda channels to add | string | - |
+| packages | Comma separated list of packages to install. Should use with the 'channels' option. | string | - |
+| envFile | Path of the an environment file (spec file) in the container. Referenced by the `micromamba create` command's `-f` option | string | - |
+| envName | Should use with the 'envFile' option. Referenced by the `micromamba create` command's `-n` option | string | - |
 
 ## Version number specification
 
@@ -43,4 +46,4 @@ More generally, `channels` can be a comma-separated list such as "conda-forge,de
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/mamba-org/devcontainer-features/blob/main/src/micromamba/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/maresb/mamba-devcontainer-features/blob/main/src/micromamba/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
